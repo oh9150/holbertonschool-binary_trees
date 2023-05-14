@@ -5,7 +5,7 @@
  * @node: the node to check
  * Return: 1 if it's a leaf, 0 if not or @node == NULL
  */
-int binary_tree_is_leaf(binary_tree_t *node)
+int binary_tree_is_leaf(const binary_tree_t *node)
 {
 	if (!node)
 		return (0);
