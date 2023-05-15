@@ -1,4 +1,4 @@
-#include "6-binary_trees.h"
+#include "binary_trees.h"
 
 /**
  * binary_tree_preorder - goes through a tree using pre-order traversal
@@ -12,6 +12,6 @@ void binary_tree_preorder(const binary_tree_t *tree, void(*func)(int))
 	if (!tree || !func)
 		return;
 	func(tree->n);
-	binary_tree_preorder(tree->left);
-	binary_tree_preorder(tree->right);
+	binary_tree_preorder(tree->left, func);
+	binary_tree_preorder(tree->right, func);
 }
