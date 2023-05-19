@@ -6,7 +6,7 @@
  * @tree: the tree
  * Return: the ammount of nodes
  */
-size_t binary_tree_nodes(binary_tree_t *tree)
+size_t binary_tree_nodes(const binary_tree_t *tree)
 {
 	size_t right, left;
 
