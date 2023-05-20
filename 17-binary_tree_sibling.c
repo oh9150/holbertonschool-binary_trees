@@ -6,7 +6,7 @@
  * Return: a pointer to the sibling or NULL if the node is NULL or there's no
  * sibling
  */
-binary_tree_t *binary_tree_sibling(binary_tree_t *tree)
+binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
 	binary_tree_t *old = tree;
 
@@ -24,3 +24,4 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *tree)
 		return (tree->right);
 
 	return (NULL);
+}
