@@ -47,7 +47,7 @@ int binary_tree_is_full_recursive(const binary_tree_t *tree)
 
 	left = binary_tree_is_full_recursive(tree->left);
 	right = binary_tree_is_full_recursive(tree->right);
-	
+
 	if (left == 0 || right == 0)
 		return (0);
 
