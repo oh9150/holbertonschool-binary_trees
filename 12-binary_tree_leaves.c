@@ -1,7 +1,8 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_leaves - finds the ammount of leaves (nodes with no children) under a given tree
+ * binary_tree_leaves - finds the ammount of leaves (nodes with no children)
+ * under a given tree
  * @tree: the tree
  * Return: the ammount of leaves
  */
