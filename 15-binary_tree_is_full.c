@@ -7,6 +7,19 @@
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
+	if (tree == NULL)
+		return (0);
+
+	binary_tree_is_full_recursive(tree);
+}
+/**
+ * binary_tree_is_full_recursive - recursive function to check if a binary
+ * tree is full
+ * @tree: the tree
+ * Return: 0 if full, 1 otherwise.
+ */
+int binary_tree_is_full_recursive(const binary_tree_t *tree)
+{
 	int children = 0, left, right;
 
 	if (!tree)
@@ -19,8 +32,8 @@ int binary_tree_is_full(const binary_tree_t *tree)
 	if (children == 1)
 		return (0);
 
-	left = binary_tree_is_full(tree->left);
-	right = binary_tree_is_full(tree->right);
+	left = binary_tree_is_full_recursive(tree->left);
+	right = binary_tree_is_full_recursive(tree->right);
 
 	if (left == 0 || right == 0)
 		return (0);
