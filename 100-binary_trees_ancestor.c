@@ -19,13 +19,13 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	depth2 = binary_tree_depth (second);
 
 	if (depth1 > depth2)
-		binary_trees_ancestor(first, second->parent);
-	if (depth1 < depth2)
 		binary_trees_ancestor(first->parent, second);
+	if (depth1 < depth2)
+		binary_trees_ancestor(first, second->parent);
 	else
 	{
-		if (first->parent == second->parent)
-			return (first->parent);
+		if (first == second)
+			return (first);
 
 		binary_trees_ancestor(first->parent, second->parent);
 	}
