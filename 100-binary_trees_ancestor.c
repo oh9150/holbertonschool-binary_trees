@@ -8,15 +8,16 @@
  * Return: the lowest common ancestor or NULL if it wasn't found or if either
  * of the nodes == NULL
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+	       const binary_tree_t *second)
 {
 	int depth1, depth2;
 
 	if (!first || !second)
 		return (NULL);
 
-	depth1 = binary_tree_depth (first);
-	depth2 = binary_tree_depth (second);
+	depth1 = binary_tree_depth(first);
+	depth2 = binary_tree_depth(second);
 
 	if (depth1 > depth2)
 		binary_trees_ancestor(first->parent, second);
@@ -26,10 +27,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 	{
 		if (first == second)
 			return ((binary_tree_t *)first);
-
-		binary_trees_ancestor(first->parent, second->parent);
 	}
-	return (NULL);
+	return (binary_trees_ancestor(first->parent, second->parent));
 }
 
 /**
