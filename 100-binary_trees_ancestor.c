@@ -28,7 +28,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		binary_trees_ancestor(first, second->parent);
 
 
-	return (binary_trees_ancestor(first->parent, second->parent));
+	return (binary_trees_ancestor(first, second));
 }
 
 /**
